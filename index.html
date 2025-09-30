@@ -4,148 +4,286 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nihad Kərimov - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Qaydaları - Bütün dizayn buradadır */
+        /* CSS Qaydaları */
+        :root {
+            --primary-color: #000000; /* Əsas Qara Rəng */
+            --secondary-color: #007bff; /* Mavi Rəng (əsasən yoxdur, amma ehtiyac olsa) */
+            --text-light: #f5f5f5; /* Ağ və Açıq Boz Rəng */
+            --text-dark: #333;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #f4f4f4;
-            color: #333;
+            display: flex;
+            justify-content: center;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        .cv-container {
+            width: 850px;
+            min-height: 1100px;
+            display: flex; /* Əsas iki sütunu yaratmaq üçün */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             background-color: #fff;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        header {
-            text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #007bff; /* Mavi xətt */
+        /* SOL SÜTUN - Qara Hissə */
+        .sidebar {
+            width: 35%;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 40px 20px 40px 40px;
+            box-sizing: border-box;
         }
 
-        header h1 {
-            margin: 0;
-            color: #007bff;
-        }
-
-        .contact-info {
-            font-size: 0.9em;
-            margin-top: 5px;
-        }
-        .contact-info a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        section {
+        .sidebar h2 {
+            font-size: 1.3em;
             margin-top: 25px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 700;
         }
 
-        h2 {
-            color: #007bff;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
+        .contact-item {
+            font-size: 0.9em;
             margin-bottom: 15px;
         }
-
-        .item h3 {
-            margin: 5px 0 2px 0;
-            color: #555;
+        .contact-item strong {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
         }
 
-        .item p.date {
-            font-style: italic;
-            font-size: 0.9em;
-            color: #777;
+        /* SKILLS və LANGUAGES */
+        .skill-bar {
+            background-color: #555;
+            height: 5px;
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 2px;
         }
-
-        ul {
+        .skill-level {
+            height: 100%;
+            background-color: #f0f0f0; /* Ağ rəngdə dolğu */
+            width: 80%; /* Məsələn, 80% səviyyə */
+            border-radius: 2px;
+        }
+        .sidebar ul {
             list-style: none;
-            padding-left: 0;
+            padding: 0;
         }
-        ul li {
-            margin-bottom: 10px;
+        .sidebar ul li {
+            margin-bottom: 15px;
+            font-size: 0.9em;
         }
-        ul.skills li {
-            display: inline-block;
-            background-color: #e9ecef;
-            padding: 5px 10px;
-            margin-right: 5px;
-            border-radius: 3px;
+
+
+        /* SAĞ SÜTUN - Ağ Hissə */
+        .main-content {
+            width: 65%;
+            padding: 40px;
+            box-sizing: border-box;
+            color: var(--text-dark);
+        }
+
+        /* Başlıq Bölməsi */
+        .header-section {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 20px;
+            margin: -40px -40px 30px 0; /* Boşluqları tənzimləmək üçün */
+            position: relative;
+        }
+        .header-section h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 700;
+        }
+        .header-section p {
+            font-size: 1.1em;
+            margin: 5px 0 0 0;
+            opacity: 0.8;
+        }
+        .profile-photo {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+        }
+
+        /* Ümumi Məzmun Başlıqları */
+        .main-content h2 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #ccc;
+        }
+
+        /* Təcrübə, Təhsil Stilləri */
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 15px;
+            border-left: 2px solid var(--primary-color); /* Zaman qrafiki xətti */
+        }
+        .experience-item:before, .education-item:before {
+            content: '';
+            position: absolute;
+            left: -6px; /* Xəttin üzərindəki dairəcik */
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .experience-item h3, .education-item h3 {
+            margin: 0;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+        .experience-item p.date, .education-item p.date {
+            font-size: 0.9em;
+            margin: 3px 0;
+            font-style: italic;
+        }
+        .experience-item ul {
+            padding-left: 20px;
+            margin-top: 5px;
             font-size: 0.9em;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>Nihad Kərimov</h1>
-        <div class="contact-info">
-            <span>Bakı, Azərbaycan</span> |
-            <a href="tel:+99450XXXXXXX">+994 70 642 4102</a> |
-            <a href="mailto:nihad.kerimov@email.com">nihadkerimov7777@email.com</a> |
-            <a href="https://linkedin.com/in/nihadkerimov" target="_blank">LinkedIn</a>
-        </div>
-    </header>
-
-    <section id="summary">
-        <h2>Qısa Məlumat (Summary)</h2>
-        <p>
-            Veb inkişafı sahəsində 3 illik təcrübəyə malik, nəticəyə fokuslanmış proqramçı. Effektiv və istifadəçi dostu veb həllərin yaradılmasında bacarıqlı. Daim yeni texnologiyaları öyrənməyə və komanda işində iştirak etməyə həvəsliyəm.
-        </p>
-    </section>
-
-    <section id="experience">
-        <h2>İş Təcrübəsi</h2>
-        <div class="item">
-            <h3>Ön Uçuş Proqramçısı (Frontend Developer)</h3>
-            <p class="date">Şirkət Adı | Yanvar 2022 - İndiyə qədər</p>
-            <ul>
-                <li>İstifadəçi interfeyslərini React və ya Vue.js istifadə edərək hazırladım və dəstəklədim.</li>
-                <li>Mobil cihazlara uyğun (Responsive) dizayn təmin etmək üçün CSS preprosessorlarından istifadə etdim.</li>
-                <li>Backend (API) ilə inteqrasiya üçün asinxron sorğular (Fetch/Axios) yazdım.</li>
-            </ul>
-        </div>
+<div class="cv-container">
+    <div class="sidebar">
         
-        <div class="item">
-            <h3>Veb Dizayner Köməkçisi</h3>
-            <p class="date">Freelance Layihələr | İyun 2021 - Dekabr 2021</p>
-            <ul>
-                <li>Kiçik bizneslər üçün HTML/CSS əsaslı 5-dən çox landing page dizayn etdim.</li>
-            </ul>
-        </div>
-    </section>
+        <h2>PROFILE</h2>
+        <p style="font-size: 0.9em;">
+            Peşəkar fəaliyyətiniz haqqında qısa bir mətn. Texnologiyalar, iş təcrübəsi və karyera hədəflərinizi qeyd edin. Məsələn, "Veb Mühəndis kimi 5 illik təcrübə. Mürəkkəb layihələri həll etməkdə bacarıqlıyam."
+        </p>
 
-    <section id="education">
-        <h2>Təhsil</h2>
-        <div class="item">
-            <h3>Kompüter Elmləri üzrə Bakalavr</h3>
-            <p class="date">Azərbaycan Texniki Universiteti (AzTU) | 2024 - 2028</p>
+        <h2>CONTACT</h2>
+        <div class="contact-item">
+            <strong>Phone</strong>
+            <a href="tel:+99450XXXXXXX">+994 70 642 41 02</a>
         </div>
-    </section>
-    
-    <section id="skills">
-        <h2>Bacarıqlar (Skills)</h2>
-        <ul class="skills">
-            <li>HTML5</li>
-            <li>CSS3 (Flexbox, Grid)</li>
-            <li>JavaScript (ES6+)</li>
-            <li>React / Vue.js</li>
-            <li>Git / GitHub</li>
-            <li>Responsive Design</li>
-            <li>API İnteqrasiyası</li>
+        <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:zakir.huseynov@email.com">nihadkerimov7777@gmail.com</a>
+        </div>
+        <div class="contact-item">
+            <strong>Location</strong>
+            Bakı, Binəqədi rayonu
+        </div>
+        <div class="contact-item">
+            <strong>LinkedIn</strong>
+            <a href="https://linkedin.com/in/zakirhuseynov" target="_blank">/in/zakirhuseynov</a>
+        </div>
+
+        <h2>SKILLS</h2>
+        <ul>
+            <li>
+                MS Word
+                <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
+            </li>
+            <li>
+                MS PowerPoint
+                <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
+            </li>
+            <li>
+                MS Outlook
+                <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
+            </li>
         </ul>
-    </section>
 
+        <h2>LANGUAGES</h2>
+        <ul>
+            <li>
+                Azərbaycan Dili (Native)
+                <div class="skill-bar"><div class="skill-level" style="width: 100%;"></div></div>
+            </li>
+            <li>
+                English (Advanced)
+                <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+            </li>
+            <li>
+                Russian (Intermediate)
+                <div class="skill-bar"><div class="skill-level" style="width: 60%;"></div></div>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="main-content">
+        
+        <div class="header-section">
+            <h1>ZAKİR HUSEYNOV</h1>
+            <p>WEB ENGINEER</p>
+            <img src="https://i.ibb.co/b3v7pXm/dummy-profile.png" alt="Zakir Hüseynov" class="profile-photo">
+        </div>
+
+        <h2>WORK EXPERIENCE</h2>
+        <div class="experience-item">
+            <h3>Senior Web Developer</h3>
+            <p class="date">2020 - İndiyə qədər | Şirkətin Adı</p>
+            <p style="font-size: 0.9em; margin-top: 5px;">
+                Vəzifə öhdəlikləriniz haqqında qısa məlumat. Nəticələri, istifadə etdiyiniz texnologiyaları və nailiyyətlərinizi qeyd edin.
+            </p>
+        </div>
+        <div class="experience-item">
+            <h3>Junior Frontend Developer</h3>
+            <p class="date">2018 - 2020 | Başqa Şirkət</p>
+            <p style="font-size: 0.9em; margin-top: 5px;">
+                Bu vəzifədə öyrəndikləriniz və uğurla bitirdiyiniz layihələr.
+            </p>
+        </div>
+
+        <h2>EDUCATION</h2>
+        <div class="education-item">
+            <h3>Kompüter Mühəndisliyi (Bakalavr)</h3>
+            <p class="date">2014 - 2018 | Azərbaycan Texniki Universiteti</p>
+            <p style="font-size: 0.9em; margin-top: 5px;">
+                Təhsil haqqında əlavə məlumat: ixtisas, fərqlənmə diplomu və s.
+            </p>
+        </div>
+
+        <h2>CERTIFICATES</h2>
+        <div class="education-item" style="border-left: none;">
+            <p class="date" style="margin-top: 0;">2022 | Sertifikatın Adı (Məs: React Developer Bootcamp)</p>
+            <p style="font-size: 0.9em; margin-top: 5px;">
+                Bu sertifikatı hansı bacarıqları əldə etdiyinizi qeyd edin.
+            </p>
+        </div>
+        <div class="education-item" style="border-left: none;">
+            <p class="date" style="margin-top: 0;">2021 | Sertifikatın Adı</p>
+        </div>
+
+        <h2>HOBBY AND INTERESTS</h2>
+        <ul style="list-style: square; padding-left: 20px; margin-top: 5px; font-size: 0.9em;">
+            <li>Travel</li>
+            <li>Reading book</li>
+            <li>Chess</li>
+        </ul>
+
+    </div>
 </div>
 </body>
 </html>
-
