@@ -1,98 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nihad Kerimov - CV</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 18px;
-    }
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li::before {
-      content: "✔ ";
-      color: #3498db;
-    }
-    section {
-      margin-bottom: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #2c3e50;
-      color: white;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihad Kərimov - CV</title>
+    <style>
+        /* CSS Qaydaları - Bütün dizayn buradadır */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #007bff; /* Mavi xətt */
+        }
+
+        header h1 {
+            margin: 0;
+            color: #007bff;
+        }
+
+        .contact-info {
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        section {
+            margin-top: 25px;
+        }
+
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .item h3 {
+            margin: 5px 0 2px 0;
+            color: #555;
+        }
+
+        .item p.date {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        ul.skills li {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Nihad Kerimov</h1>
-    <p>IT Student | Future Network & Security Specialist</p>
-  </header>
 
-  <main>
-    <section>
-      <h2>Education</h2>
-      <p>Bachelor in Information Technology</p>
+<div class="container">
+    <header>
+        <h1>Nihad Kərimov</h1>
+        <div class="contact-info">
+            <span>Bakı, Azərbaycan</span> |
+            <a href="tel:+99450XXXXXXX">+994 50 XXX XX XX</a> |
+            <a href="mailto:nihad.kerimov@email.com">nihadkerimov7777@email.com</a> |
+            <a href="https://linkedin.com/in/nihadkerimov" target="_blank">LinkedIn</a>
+        </div>
+    </header>
+
+    <section id="summary">
+        <h2>Qısa Məlumat (Summary)</h2>
+        <p>
+            Veb inkişafı sahəsində 3 illik təcrübəyə malik, nəticəyə fokuslanmış proqramçı. Effektiv və istifadəçi dostu veb həllərin yaradılmasında bacarıqlı. Daim yeni texnologiyaları öyrənməyə və komanda işində iştirak etməyə həvəsliyəm.
+        </p>
     </section>
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>Networking (Cisco, Wireshark)</li>
-        <li>Programming (Python, HTML, CSS)</li>
-        <li>Linux & Windows Administration</li>
-      </ul>
+    <section id="experience">
+        <h2>İş Təcrübəsi</h2>
+        <div class="item">
+            <h3>Ön Uçuş Proqramçısı (Frontend Developer)</h3>
+            <p class="date">Şirkət Adı | Yanvar 2022 - İndiyə qədər</p>
+            <ul>
+                <li>İstifadəçi interfeyslərini React və ya Vue.js istifadə edərək hazırladım və dəstəklədim.</li>
+                <li>Mobil cihazlara uyğun (Responsive) dizayn təmin etmək üçün CSS preprosessorlarından istifadə etdim.</li>
+                <li>Backend (API) ilə inteqrasiya üçün asinxron sorğular (Fetch/Axios) yazdım.</li>
+            </ul>
+        </div>
+        
+        <div class="item">
+            <h3>Veb Dizayner Köməkçisi</h3>
+            <p class="date">Freelance Layihələr | İyun 2021 - Dekabr 2021</p>
+            <ul>
+                <li>Kiçik bizneslər üçün HTML/CSS əsaslı 5-dən çox landing page dizayn etdim.</li>
+            </ul>
+        </div>
     </section>
 
-    <section>
-      <h2>Certificates</h2>
-      <p>Will be added soon...</p>
+    <section id="education">
+        <h2>Təhsil</h2>
+        <div class="item">
+            <h3>Kompüter Elmləri üzrə Bakalavr</h3>
+            <p class="date">Azərbaycan Texniki Universiteti (AzTU) | 2024 - 2028</p>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <h2>Bacarıqlar (Skills)</h2>
+        <ul class="skills">
+            <li>HTML5</li>
+            <li>CSS3 (Flexbox, Grid)</li>
+            <li>JavaScript (ES6+)</li>
+            <li>React / Vue.js</li>
+            <li>Git / GitHub</li>
+            <li>Responsive Design</li>
+            <li>API İnteqrasiyası</li>
+        </ul>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: yourmail@example.com</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Nihad Kerimov</p>
-  </footer>
+</div>
 </body>
 </html>
